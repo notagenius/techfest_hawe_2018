@@ -1,0 +1,133 @@
+extends layout
+
+block content
+  script(src='http://code.jquery.com/jquery-2.1.4.min.js', charset='utf-8')
+  script(type='text/javascript', src='https://www.gstatic.com/charts/loader.js')
+  script(type='text/javascript').
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var accelerationChartData;
+      var magnitudeChartData;
+      var gyroscopdeChartData;
+      var ultrasonicChartData;
+
+      $(function(){
+          $.ajax({
+              url: 'acceleration_data',
+              type: 'GET',
+              success : function(data) {
+                    var accelerationData = new google.visualization.DataTable();
+                    accelerationData.addColumn('string', 'Timestamp')
+                    accelerationData.addColumn('number', 'Acceleration X');
+                    accelerationData.addColumn('number', 'Acceleration Y');
+                    accelerationData.addColumn('number', 'Acceleration Z');
+                    try {
+                        data.forEach(function(element){
+                            accelerationData.addRow([element[1]['timestamp'], element[1]['acc_x'], element[1]['acc_y'], element[1]['acc_z']]);
+                        });
+                    }
+                    catch(err) {}
+
+                    var options = {
+                        title: 'Acceleration',
+                        curveType: 'function',
+                        hAxis: { textPosition: 'none' },
+                        legend: { position: 'bottom' }
+                    };
+
+                    var chart = new google.visualization.LineChart(document.getElementById('curve_chart_acceleration'));
+                    chart.draw(accelerationData, options);
+              }
+          });
+      });
+
+      $(function(){
+          $.ajax({
+              url: 'magnitude_data',
+              type: 'GET',
+              success : function(data) {
+                var magnitudeData = new google.visualization.DataTable();
+                magnitudeData.addColumn('string', 'Timestamp')
+                magnitudeData.addColumn('number', 'Magnitude X');
+                magnitudeData.addColumn('number', 'Magnitude Y');
+                magnitudeData.addColumn('number', 'Magnitude Z');
+                data.forEach(function(element){
+                    magnitudeData.addRow([element[1]['timestamp'], element[1]['mag_x'], element[1]['mag_y'], element[1]['mag_z']]);
+                });
+
+                var options = {
+                    title: 'Magnitude',
+                    curveType: 'function',
+                    hAxis: { textPosition: 'none' },
+                    legend: { position: 'bottom' }
+                };
+
+                var chart = new google.visualization.LineChart(document.getElementById('curve_chart_magnitude'));
+                chart.draw(magnitudeData, options);
+              }
+          });
+      });
+
+      $(function(){
+          $.ajax({
+              url: 'gyroscope_data',
+              type: 'GET',
+              success : function(data) {
+                    var gyroscopeData = new google.visualization.DataTable();
+                    gyroscopeData.addColumn('string', 'Timestamp')
+                    gyroscopeData.addColumn('number', 'Gyroscope X');
+                    gyroscopeData.addColumn('number', 'Gyroscope Y');
+                    gyroscopeData.addColumn('number', 'Gyroscope Z');
+                    data.forEach(function(element){
+                        gyroscopeData.addRow([element[1]['timestamp'], element[1]['gyro_x'], element[1]['gyro_y'], element[1]['gyro_z']]);
+                    });
+
+                    var options = {
+                        title: 'Gyroscope',
+                        curveType: 'function',
+                        hAxis: { textPosition: 'none' },
+                        legend: { position: 'bottom' }
+                    };
+
+                    var chart = new google.visualization.LineChart(document.getElementById('curve_chart_gyroscope'));
+                    chart.draw(gyroscopeData, options);
+              }
+          });
+      });
+
+      $(function(){
+          $.ajax({
+              url: 'ultrasonic_data',
+              type: 'GET',
+              success : function(data) {
+                var ultrasonicData = new google.visualization.DataTable();
+                ultrasonicData.addColumn('string', 'Timestamp')
+                ultrasonicData.addColumn('number', 'Distance');
+                data.forEach(function(element){
+                    ultrasonicData.addRow([element[1]['_id'], element[1]['distance']]);
+                });
+
+                var options = {
+                    title: 'Ultrasonic',
+                    curveType: 'function',
+                    hAxis: { textPosition: 'none' },
+                    legend: { position: 'bottom' }
+                };
+
+                var chart = new google.visualization.LineChart(document.getElementById('curve_chart_ultrasonic'));
+                chart.draw(ultrasonicData, options);
+              }
+          });
+        });
+    }
+  .row
+    .col-md-6
+        #curve_chart_acceleration
+    .col-md-6
+        #curve_chart_magnitude
+  .row
+    .col-md-6
+        #curve_chart_gyroscope
+    .col-md-6 
+        #curve_chart_ultrasonic

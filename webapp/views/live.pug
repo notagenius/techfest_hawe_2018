@@ -1,0 +1,76 @@
+extends layout
+
+block content
+    .row
+        .col-md-6
+            .card.text-center
+                .card-body
+                h5.card-title Gyroscope
+                p.card-text
+                    #gyx x: 0.823
+                    #gyy y: 0.832
+                    #gyz z: 0.756
+                a.btn.btn-primary(href='visualisation') More information
+        .col-md-6
+            .card.text-center
+                .card-body
+                h5.card-title Accelerometer
+                p.card-text
+                    #accx x: 0.226
+                    #accy y: 0.194
+                    #accz z: 0.932
+                a.btn.btn-primary(href='visualisation') More information
+    .row
+        .col-md-6
+            .card.text-center
+                .card-body
+                h5.card-title Magnitude
+                p.card-text
+                    #magx x: 0.121
+                    #magy y: 0.892
+                    #magz z: 1.243
+                a.btn.btn-primary(href='visualisation') More information
+        .col-md-6
+            .card.text-center#carddistance
+                .card-body
+                h5.card-title Distance
+                p.card-text
+                    #dist 108 cm
+                br
+                br 
+                a.btn.btn-primary(href='visualisation') More information
+    script(src='/socket.io/socket.io.js')
+    script.
+        var socket = io();
+        socket.on('acceleration_sample', function(msg){
+            console.log(msg);
+            var x = msg.split(",")[0];
+            var y = msg.split(",")[1];
+            var z = msg.split(",")[2];
+            $('#accx').text("x: " + x);
+            $('#accy').text("y: " + y);
+            $('#accz').text("z: " + z);
+        });
+        socket.on('magnitude_sample', function(msg){
+            console.log(msg);
+            var x = msg.split(",")[0];
+            var y = msg.split(",")[1];
+            var z = msg.split(",")[2];
+            $('#magx').text("x: " + x);
+            $('#magy').text("y: " + y);
+            $('#magz').text("z: " + z);
+        });
+        socket.on('gyroscope_sample', function(msg){
+            console.log(msg);
+            var x = msg.split(",")[0];
+            var y = msg.split(",")[1];
+            var z = msg.split(",")[2];
+            $('#gyx').text("x: " + x);
+            $('#gyy').text("y: " + y);
+            $('#gyz').text("z: " + z);
+        });
+        socket.on('distance_sample', function(msg){
+            console.log(msg);
+            $('#dist').text(msg + " cm");
+        });
+

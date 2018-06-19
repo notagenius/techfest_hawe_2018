@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  h1 Safety Aid 
+  p.lead Safety comes first
+  hr
+  .row
+    .col-md-6
+      .card.text-center
+        img.card-img-top(src='http://upanddown.ca/wp-content/uploads/2015/11/LIFTERS_Post_Crawler60-2.jpg', alt='Card image cap')
+        .card-body
+          h5.card-title Crawler lift I8734
+          p.card-text
+            i.fas.fa-map-marker-alt
+            | Lichtenbergstraße 6, Garching bei München
+            br
+            i.fas.fa-sun
+            | 24°C, sunny
+          a.btn.btn-primary(href='visualisation') More information
+    .col-md-6
+      .card.text-center
+        img.card-img-top(src='https://vignette.wikia.nocookie.net/kongregate/images/9/96/Unknown_flag.png/revision/latest/scale-to-width-down/640?cb=20100825093317', alt='Card image cap')
+        .card-body
+          h5.card-title Add new crawler
+          p.card-text
+            i.fas.fa-tablet-alt
+            | Insert another device into your system
+            br 
+            i.fas.fa-database
+            | Keep track of its data
+            br
+            i.fas.fa-comment-alt
+            | Get notified about dangerous situations
+          a.btn.btn-primary(href='visualisation') Add

@@ -1,0 +1,31 @@
+extends ../layout
+
+block content
+  .pb-2.mt-2.mb-4.border-bottom
+    h2
+      i.far.fa-envelope.fa-sm
+      | Lob API
+  .btn-group.d-flex(role='group')
+    a.btn.btn-primary(href='https://lob.com/docs')
+      i.far.fa-check-square.fa-sm
+      | API Documentation 
+    a.btn.btn-primary(href='https://github.com/lob/lob-node', target='_blank').w-100
+      i.fas.fa-code.fa-sm
+      | Lob Node Docs
+    a.btn.btn-primary(href='https://dashboard.lob.com/register', target='_blank').w-100
+      i.fas.fa-cog.fa-sm
+      | Create API Account
+  br
+  h3 Delivery routes in 10007
+  table.table.table-striped.table-bordered
+    thead
+      tr
+        th Route
+        th # of Residential Addresses
+        th # of Business Addresses
+    tbody
+      for route in routes
+        tr
+          td= route.route
+          td= route.residential
+          td= route.business
