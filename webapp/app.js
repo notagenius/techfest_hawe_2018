@@ -19,7 +19,7 @@ const expressValidator = require('express-validator');
 const sass = require('node-sass-middleware');
 const multer = require('multer');
 const mongoClient = require("mongodb").MongoClient;
-const url = "mongodb://safetyaid:hibKenkjGdswKUrrqpqHbMuj6bsFV51PJ0Xfd7y7bYmBe1y2uGwwYXG9zsVPuIwgEnsfnUS4LQGVOGWFOmpDSg%3D%3D@safetyaid.documents.azure.com:10255/?ssl=true";
+const url = "mongodb://localhost:27017/safetyaid";
 
 const upload = multer({ dest: path.join(__dirname, 'uploads') });
 
@@ -77,7 +77,7 @@ app.use(session({
   secret: process.env.SESSION_SECRET,
   cookie: { maxAge: 1209600000 }, // two weeks in milliseconds
   store: new MongoStore({
-    url: "mongodb://safetyaid:hibKenkjGdswKUrrqpqHbMuj6bsFV51PJ0Xfd7y7bYmBe1y2uGwwYXG9zsVPuIwgEnsfnUS4LQGVOGWFOmpDSg%3D%3D@safetyaid.documents.azure.com:10255/?ssl=true",
+    url: "mongodb://localhost:27017/safetyaid",
     autoReconnect: true,
   })
 }));
