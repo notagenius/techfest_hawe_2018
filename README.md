@@ -4,7 +4,7 @@ This is our hackathon final result of Techfest for the changelle of HAWE.
 
 A fully DIY sensor box which can collect data to cloud server featuring vibration detection with realtime dashboard and a Neo watch notification.
 
-To know more, you can check our [presentation](https://raw.githubusercontent.com/notagenius/techfest_hawe_2018/master/doc/Safetyaid_final.pdf)
+To know more, you can check our [presentation](https://github.com/notagenius/techfest_hawe_2018/blob/master/doc/Safetyaid_final.pdf)
 
 # Team
 
