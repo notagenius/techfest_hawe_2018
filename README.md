@@ -24,12 +24,11 @@ A fully DIY sensor box which can collect data to cloud server featuring vibratio
 - Adafruit 9-DOF LSM9DS1
 - jumper cables
 - Raspberry Pi 7" Touchscreen Display and Case (optional)
-![placeholder](https://raw.githubusercontent.com/notagenius/techfest_hawe_2018/master/doc/box_front.jpeg)
-![placeholder](https://raw.githubusercontent.com/notagenius/techfest_hawe_2018/master/doc/box_back.jpeg)
-
-
 Ultrasonic connect diagram
 ![placeholder](https://raw.githubusercontent.com/notagenius/techfest_hawe_2018/master/doc/Raspberry-Pi-HC-SR04.png)
+
+![placeholder](https://raw.githubusercontent.com/notagenius/techfest_hawe_2018/master/doc/box_front.jpeg)
+![placeholder](https://raw.githubusercontent.com/notagenius/techfest_hawe_2018/master/doc/box_back.jpeg)
 
 ## for Neo Watch
 
@@ -43,5 +42,5 @@ Ultrasonic connect diagram
 ![placeholder](https://raw.githubusercontent.com/notagenius/techfest_hawe_2018/master/doc/webapp_realtime.jpeg)
 
 
-# detection
+# Detection
 [video on youtube](https://www.youtube.com/watch?v=_0IkiYeq0d4)
