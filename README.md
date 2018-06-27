@@ -23,8 +23,8 @@ A fully DIY sensor box which can collect data to cloud server featuring vibratio
 - 1 x 330R resistor
 - Adafruit 9-DOF LSM9DS1
 - jumper cables
-- Raspberry Pi 7" Touchscreen Display and Case (optional)
-Ultrasonic connect diagram
+- raspberry pi 7" touchscreen display and case (optional)
+ultrasonic connect diagram
 ![placeholder](https://raw.githubusercontent.com/notagenius/techfest_hawe_2018/master/doc/Raspberry-Pi-HC-SR04.png)
 
 ![placeholder](https://raw.githubusercontent.com/notagenius/techfest_hawe_2018/master/doc/box_front.jpeg)
