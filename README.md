@@ -5,9 +5,9 @@ A fully DIY sensor box which can collect data to cloud server featuring vibratio
 
 # Team
 
-Manuel Lang  manuellang183@gmail.com
-Weiling Xi  aileen365@gmail.com
-Bahadur Aly  bahadur.aly@gmail.com
+- [Manuel Lang](https://github.com/manu183) (manuellang183@gmail.com)
+- [Weiling Xi](https://github.com/notagenius) (aileen365@gmail.com)
+- Bahadur Aly(bahadur.aly@gmail.com)
 
 # Workflow
 
