@@ -1,6 +1,7 @@
 # Techfest_Hawe_2018
 
-this is our hackathon final result of Techfest for the changelle of HAWE
+This is our hackathon final result of Techfest for the changelle of HAWE.
+
 A fully DIY sensor box which can collect data to cloud server featuring vibration detection with realtime dashboard and a Neo watch notification.
 
 # Team
