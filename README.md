@@ -2,8 +2,7 @@
 
 This is our hackathon final result of Techfest for the changelle of HAWE.
 
-SAFETYAID:
-
+####SAFETYAID:
 A fully DIY sensor box which can collect data to cloud server featuring vibration detection with realtime dashboard and a Neo watch notification.
 
 To know more, you can check our [presentation](https://github.com/notagenius/techfest_hawe_2018/blob/master/doc/Safetyaid_final.pdf)
@@ -52,4 +51,4 @@ ultrasonic connect diagram
 # Detection
 [video on youtube](https://www.youtube.com/watch?v=_0IkiYeq0d4)
 
-[SafetyAid TEAM]
+[SafetyAid TEAM Presents]
