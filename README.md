@@ -37,6 +37,8 @@ ultrasonic connect diagram
 - raspberry pi zero
 - NeoRGB Ring 24 Adafruit
 - software: [rpi_ws281x](https://github.com/jgarff/rpi_ws281x)
+![placeholder](https://raw.githubusercontent.com/notagenius/techfest_hawe_2018/master/doc/watch.jpeg)
+
 
 # Web Application
 ![placeholder](https://raw.githubusercontent.com/notagenius/techfest_hawe_2018/master/doc/webapp_machinechoose.jpeg)
